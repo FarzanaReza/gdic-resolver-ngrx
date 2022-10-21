@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mt-5 pt-5">
+        <h1 class="text-center mb-5">LogIn</h1>
+        <div class="col-12 col-lg-5">
+            <form class="row g-3 needs-validation" [formGroup]="logInForm"  (ngSubmit)="onSubmit()">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="username"
+                    formControlName="username" [class]="(logInForm.get('username')?.touched && logInForm.get('username')?.hasError('required')) || error ? 'invalid':'valid'">
+                    <label for="floatingInput">Username<span class="req">*</span></label>
+                    <span class="err_msg" *ngIf="(logInForm.get('username')?.touched && logInForm.get('username')?.hasError('required')) || error ">
+                        Username is required.
+                    </span>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"
+                    [class]="(logInForm.get('password')?.touched && logInForm.get('password')?.hasError('required')) || error ? 'invalid':'valid'">
+                    <label for="floatingPassword">Password<span class="req">*</span></label>
+                    <span  class="err_msg" *ngIf="(logInForm.get('password')?.touched && logInForm.get('password')?.hasError('required'))|| error ">
+                        Password  is required.
+                    </span>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-primary px-3" type="submit">Go</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</div>

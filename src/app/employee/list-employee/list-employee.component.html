@@ -1,0 +1,26 @@
+<div class="container p-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="text-center mb-5">Employee List</h1>
+    <a href="employee/new"  class="btn btn-success">Add Employee</a>
+  </div>
+  <div>
+    <table class="table table-responsive">
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.id}}</td>
+        <td>{{employee.firstName}} {{employee.lastName}}</td>
+        <td>{{employee.phone}}</td>
+        <td>{{employee.address.address}}</td>
+        <td>{{employee.address.city}}</td>
+        <td>{{employee.address.state}}</td>
+      </tr>
+    </table>
+    </div>
+</div>
